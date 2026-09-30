@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Qamar Siam — CV</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Inter+Tight:wght@400;500;600;700&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   CV — Qamar Siam
+   Screen: soft light theme with a subtle grid.
+   Print: A4, black on white, clean margins, hyperlinks visible.
+   ============================================================ */
+:root{
+  --ink:#14120F;
+  --mute:#5F5A54;
+  --line:#D9D3C6;
+  --accent:#2E4A6B;
+  --hi:#C9803A;
+  --bg:#F6F4EF;
+  --paper:#FBF9F4;
+
+  --serif:'Fraunces', Georgia, serif;
+  --sans:'Inter Tight', system-ui, -apple-system, sans-serif;
+  --mono:'JetBrains Mono', ui-monospace, monospace;
+}
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+
+html{ -webkit-text-size-adjust:100%; }
+body{
+  background:var(--bg);
+  color:var(--ink);
+  font:400 10.5pt/1.55 var(--sans);
+  -webkit-font-smoothing:antialiased;
+  padding:32px 16px;
+}
+
+/* A4-ish page on screen */
+.page{
+  width:min(800px, 100%);
+  margin:0 auto;
+  background:var(--paper);
+  border:1px solid var(--line);
+  border-radius:14px;
+  padding:clamp(28px, 4.5vw, 56px) clamp(24px, 5vw, 60px);
+  box-shadow:0 20px 60px -30px rgba(0,0,0,.25);
+}
+
+/* ---------- Header ---------- */
+.head{
+  display:grid;
+  grid-template-columns:1fr auto;
+  gap:20px;
+  align-items:start;
+  padding-bottom:20px;
+  border-bottom:2px solid var(--ink);
+  margin-bottom:24px;
+}
+.name{
+  font-family:var(--serif);
+  font-weight:400;
+  font-size:clamp(28px, 4.5vw, 42px);
+  line-height:1.05;
+  letter-spacing:-.02em;
+  color:var(--ink);
+}
+.role{
+  font-family:var(--mono);
+  font-size:9.5pt;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  color:var(--accent);
+  margin-top:6px;
+}
+.contact{
+  text-align:right;
+  font-size:9.5pt;
+  line-height:1.7;
+  color:var(--mute);
+}
+.contact a{ color:var(--mute); text-decoration:none; border-bottom:1px dotted var(--line); }
+.contact a:hover{ color:var(--accent); border-color:var(--accent); }
+
+/* ---------- Intro ---------- */
+.intro{
+  font-size:10.5pt;
+  color:var(--ink);
+  max-width:62ch;
+  margin-bottom:28px;
+}
+.intro strong{ font-weight:600; }
+
+/* ---------- Section ---------- */
+section{ margin-bottom:26px; }
+h2{
+  font-family:var(--mono);
+  font-size:9pt;
+  font-weight:400;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  color:var(--accent);
+  padding-bottom:6px;
+  border-bottom:1px solid var(--line);
+  margin-bottom:14px;
+}
+
+/* ---------- Skills grid ---------- */
+.skills{
+  display:grid;
+  grid-template-columns:repeat(3, 1fr);
+  gap:18px;
+}
+.skill h3{
+  font-family:var(--serif);
+  font-weight:400;
+  font-size:13pt;
+  letter-spacing:-.01em;
+  margin-bottom:6px;
+  color:var(--ink);
+}
+.skill ul{ list-style:none; font-size:9.5pt; color:var(--mute); }
+.skill li{ padding:1px 0; }
+.skill li::before{ content:"—"; color:var(--accent); margin-right:6px; }
+
+/* ---------- Experience / Projects ---------- */
+.job{ margin-bottom:18px; }
+.job:last-child{ margin-bottom:0; }
+.job-head{
+  display:flex;
+  justify-content:space-between;
+  align-items:baseline;
+  gap:12px;
+  flex-wrap:wrap;
+  margin-bottom:2px;
+}
+.job-title{
+  font-family:var(--serif);
+  font-weight:400;
+  font-size:14pt;
+  letter-spacing:-.01em;
+}
+.job-meta{
+  font-family:var(--mono);
+  font-size:8.5pt;
+  color:var(--accent);
+  letter-spacing:.05em;
+  white-space:nowrap;
+}
+.job-sub{
+  font-size:9.5pt;
+  color:var(--mute);
+  margin-bottom:6px;
+}
+.job ul{ list-style:none; font-size:10pt; }
+.job li{
+  position:relative;
+  padding-left:16px;
+  margin-bottom:3px;
+  color:var(--ink);
+}
+.job li::before{
+  content:"";
+  position:absolute;
+  left:0; top:.62em;
+  width:8px; height:1px;
+  background:var(--accent);
+}
+
+/* ---------- Education ---------- */
+.edu{
+  display:grid;
+  grid-template-columns:1fr auto;
+  gap:8px 16px;
+  align-items:baseline;
+  margin-bottom:12px;
+}
+.edu:last-child{ margin-bottom:0; }
+.edu strong{
+  font-family:var(--serif);
+  font-weight:400;
+  font-size:12pt;
+  letter-spacing:-.01em;
+  display:block;
+}
+.edu span{ font-size:9.5pt; color:var(--mute); }
+.edu time{
+  font-family:var(--mono);
+  font-size:8.5pt;
+  color:var(--accent);
+  white-space:nowrap;
+}
+
+/* ---------- Footer ---------- */
+.foot{
+  margin-top:32px;
+  padding-top:14px;
+  border-top:1px solid var(--line);
+  display:flex;
+  justify-content:space-between;
+  gap:12px;
+  flex-wrap:wrap;
+  font-family:var(--mono);
+  font-size:8pt;
+  letter-spacing:.06em;
+  color:var(--mute);
+  text-transform:uppercase;
+}
+
+/* ---------- Print action button (screen only) ---------- */
+.print-btn{
+  position:fixed;
+  bottom:24px;
+  right:24px;
+  background:var(--accent);
+  color:#fff;
+  border:0;
+  padding:12px 20px;
+  border-radius:999px;
+  font:600 10pt var(--sans);
+  cursor:pointer;
+  box-shadow:0 12px 30px -10px var(--accent);
+  z-index:10;
+  transition:transform .25s ease;
+}
+.print-btn:hover{ transform:translateY(-2px); }
+.print-btn:active{ transform:scale(.97); }
+
+@media(max-width:600px){
+  .head{ grid-template-columns:1fr; }
+  .contact{ text-align:left; }
+  .skills{ grid-template-columns:1fr; gap:14px; }
+  .job-head{ flex-direction:column; align-items:flex-start; gap:2px; }
+  .print-btn{ bottom:16px; right:16px; padding:10px 16px; font-size:9pt; }
+}
+
+/* ============================================================
+   PRINT — A4, black on white
+   ============================================================ */
+@page{
+  size:A4;
+  margin:14mm 14mm 12mm 14mm;
+}
+@media print{
+  :root{
+    --ink:#000;
+    --mute:#333;
+    --line:#999;
+    --accent:#1B2E45;
+    --bg:#fff;
+    --paper:#fff;
+  }
+  html, body{ background:#fff; }
+  body{ padding:0; font-size:10pt; line-height:1.45; }
+
+  .page{
+    width:auto;
+    margin:0;
+    padding:0;
+    border:0;
+    border-radius:0;
+    box-shadow:none;
+    background:#fff;
+  }
+
+  .print-btn{ display:none !important; }
+
+  /* Keep blocks together across page breaks */
+  .job, .edu, .skill{ break-inside:avoid; page-break-inside:avoid; }
+  h2{ break-after:avoid; page-break-after:avoid; }
+  section{ break-inside:auto; }
+
+  /* Make sure links print as text, not lost */
+  a{ color:inherit; text-decoration:none; border:0; }
+
+  /* Slightly tighter for one-page fit */
+  .head{ padding-bottom:14px; margin-bottom:18px; border-bottom-width:1.5px; }
+  .intro{ margin-bottom:20px; }
+  section{ margin-bottom:18px; }
+  .job{ margin-bottom:14px; }
+  .skills{ gap:14px; }
+}
+</style>
+</head>
+<body>
+
+<div class="page">
+
+  <!-- ============================================================
+       HEADER
+       ============================================================ -->
+  <header class="head">
+    <div>
+      <h1 class="name">Qamar Siam</h1>
+      <div class="role">MERN &amp; Shopify Developer</div>
+    </div>
+    <div class="contact">
+      Faisalabad, Pakistan<br>
+      <a href="mailto:hello@example.com">hello@example.com</a><br>
+      <a href="https://github.com/">github.com/qamarsiam</a><br>
+      <a href="https://www.linkedin.com/">linkedin.com/in/qamarsiam</a>
+    </div>
+  </header>
+
+  <!-- ============================================================
+       INTRO
+       ============================================================ -->
+  <p class="intro">
+    Web developer working in the <strong>MERN stack</strong> and <strong>custom Shopify themes</strong>.
+    I write the Liquid, the API and the interface — and I care how each one feels on a phone.
+    I build storefronts and web apps around one idea: premium feel should not cost performance.
+  </p>
+
+  <!-- ============================================================
+       SKILLS
+       ============================================================ -->
+  <section>
+    <h2>Skills</h2>
+    <div class="skills">
+      <div class="skill">
+        <h3>Shopify</h3>
+        <ul>
+          <li>Liquid templating</li>
+          <li>Online Store 2.0</li>
+          <li>Sections &amp; blocks</li>
+          <li>Metafields</li>
+          <li>Theme CLI</li>
+        </ul>
+      </div>
+      <div class="skill">
+        <h3>MERN Stack</h3>
+        <ul>
+          <li>MongoDB</li>
+          <li>Express</li>
+          <li>React</li>
+          <li>Node.js</li>
+          <li>REST APIs</li>
+        </ul>
+      </div>
+      <div class="skill">
+        <h3>Front End</h3>
+        <ul>
+          <li>Semantic HTML5</li>
+          <li>CSS Grid / Flexbox</li>
+          <li>Vanilla JavaScript (ES6+)</li>
+          <li>Responsive layout</li>
+          <li>Accessibility</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       EXPERIENCE
+       ============================================================ -->
+  <section>
+    <h2>Experience</h2>
+
+    <div class="job">
+      <div class="job-head">
+        <div class="job-title">Shopify Theme Developer</div>
+        <div class="job-meta">2024 — Present</div>
+      </div>
+      <div class="job-sub">Freelance &amp; client work · Remote</div>
+      <ul>
+        <li>Built custom Shopify themes in Liquid for retail clients, from section architecture to cart behaviour.</li>
+        <li>Designed merchant-friendly themes where sections and blocks can be rearranged without breaking layout.</li>
+        <li>Shipped mobile-first themes, designing at 320px and scaling up — because most shoppers are on phones.</li>
+        <li>Reduced load times by cutting third-party scripts and favouring native CSS and lazy-loaded assets.</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="job-head">
+        <div class="job-title">MERN Stack Developer</div>
+        <div class="job-meta">2024 — Present</div>
+      </div>
+      <div class="job-sub">Independent projects · Remote</div>
+      <ul>
+        <li>Built full-stack e-commerce apps with MongoDB, Express, React and Node — catalogue, cart and orders end to end.</li>
+        <li>Wrote REST APIs with authentication, order flows and inventory logic, tested against the front-end UI.</li>
+        <li>Owned the whole stack: schema design, API endpoints, React components, deployment.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       PROJECTS
+       ============================================================ -->
+  <section>
+    <h2>Selected Projects</h2>
+
+    <div class="job">
+      <div class="job-head">
+        <div class="job-title">Lumère</div>
+        <div class="job-meta">Shopify · Liquid</div>
+      </div>
+      <div class="job-sub">Client storefront</div>
+      <ul>
+        <li>Custom Shopify theme with a refined product page, section-based architecture and clean mobile cart.</li>
+        <li>Fully editable in the theme editor — merchant can rearrange sections without touching code.</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="job-head">
+        <div class="job-title">Decor &amp; Waqat</div>
+        <div class="job-meta">Shopify · Liquid</div>
+      </div>
+      <div class="job-sub">Two custom Shopify themes</div>
+      <ul>
+        <li>Decor: catalogue-led layout built for browsing many products at once.</li>
+        <li>Waqat: product-focused, spec-heavy pages tuned for a watch storefront.</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="job-head">
+        <div class="job-title">Mirchi</div>
+        <div class="job-meta">MERN</div>
+      </div>
+      <div class="job-sub">E-commerce app for a spice shop</div>
+      <ul>
+        <li>Catalogue, cart and orders built end to end on a React front end with a Node API.</li>
+        <li>MongoDB for products and orders, Express for routing, JWT for auth.</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="job-head">
+        <div class="job-title">Zul-e-Aas &amp; Slice-up</div>
+        <div class="job-meta">Shopify + MERN</div>
+      </div>
+      <div class="job-sub">Theme &amp; second MERN storefront</div>
+      <ul>
+        <li>Zul-e-Aas: further custom Shopify theme work.</li>
+        <li>Slice-up: second MERN e-commerce build with a different catalogue and checkout logic.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       EDUCATION
+       ============================================================ -->
+  <section>
+    <h2>Education &amp; Certifications</h2>
+
+    <div class="edu">
+      <div>
+        <strong>MERN Stack Certification</strong>
+        <span>NAVTTC — National Vocational &amp; Technical Training Commission</span>
+      </div>
+      <time>2024</time>
+    </div>
+
+    <div class="edu">
+      <div>
+        <strong>Bachelor's Degree</strong>
+        <span>University of Agriculture, Faisalabad</span>
+      </div>
+      <time>2025</time>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       FOOTER
+       ============================================================ -->
+  <div class="foot">
+    <span>Qamar Siam · MERN &amp; Shopify Developer</span>
+    <span>Faisalabad, Pakistan</span>
+  </div>
+
+</div>
+
+<!-- Print button (hidden when printing) -->
+<button class="print-btn" onclick="window.print()">↓ Save as PDF</button>
+
+</body>
+</html>
