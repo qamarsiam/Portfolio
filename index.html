@@ -107,9 +107,7 @@
       -webkit-font-smoothing: antialiased;
       overflow-x: hidden;
       padding-bottom: env(safe-area-inset-bottom, 0px);
-      transition:
-        background 0.5s,
-        color 0.5s;
+      transition: background 0.5s, color 0.5s;
     }
 
     ::selection {
@@ -159,9 +157,7 @@
       padding: 0 clamp(18px, 5vw, 56px);
     }
 
-    h1,
-    h2,
-    h3 {
+    h1, h2, h3 {
       font-family: var(--serif);
       font-weight: 400;
       letter-spacing: -0.03em;
@@ -182,9 +178,7 @@
       position: relative;
     }
 
-    header,
-    main,
-    footer {
+    header, main, footer {
       position: relative;
       z-index: 1;
     }
@@ -205,12 +199,8 @@
       inset: 0;
       width: 100%;
       height: 100%;
-      -webkit-mask-image: radial-gradient(ellipse at center,
-          rgba(0, 0, 0, 0.25),
-          #000 85%);
-      mask-image: radial-gradient(ellipse at center,
-          rgba(0, 0, 0, 0.25),
-          #000 85%);
+      -webkit-mask-image: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.25), #000 85%);
+      mask-image: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.25), #000 85%);
     }
 
     .room path {
@@ -243,8 +233,7 @@
       max-width: calc(100vw - 20px);
     }
 
-    nav a,
-    nav>button {
+    nav a, nav > button {
       min-height: 44px;
       min-width: 44px;
       padding: 0 14px;
@@ -256,19 +245,15 @@
       background: none;
       border: 0;
       cursor: pointer;
-      transition:
-        background 0.3s,
-        transform 0.3s var(--pop);
+      transition: background 0.3s, transform 0.3s var(--pop);
       white-space: nowrap;
     }
 
-    nav a:hover,
-    nav a.on {
+    nav a:hover, nav a.on {
       background: color-mix(in srgb, var(--accent) 16%, transparent);
     }
 
-    nav a:active,
-    nav>button:active {
+    nav a:active, nav > button:active {
       transform: scale(0.97);
     }
 
@@ -289,10 +274,7 @@
       width: 22px;
       height: 22px;
       border-radius: 50%;
-      background: conic-gradient(var(--accent) 0 25%,
-          var(--hi) 0 50%,
-          var(--ink) 0 75%,
-          var(--line) 0);
+      background: conic-gradient(var(--accent) 0 25%, var(--hi) 0 50%, var(--ink) 0 75%, var(--line) 0);
     }
 
     .pop {
@@ -307,9 +289,7 @@
       border: 1px solid var(--line);
       box-shadow: 0 20px 50px -15px rgba(0, 0, 0, 0.4);
       transform-origin: bottom right;
-      transition:
-        transform 0.35s var(--pop),
-        opacity 0.25s;
+      transition: transform 0.35s var(--pop), opacity 0.25s;
     }
 
     .pop[hidden] {
@@ -336,9 +316,7 @@
 
     .sw[aria-pressed="true"] {
       border-color: var(--ink);
-      box-shadow:
-        0 0 0 3px var(--surface),
-        0 0 0 5px var(--accent);
+      box-shadow: 0 0 0 3px var(--surface), 0 0 0 5px var(--accent);
     }
 
     @media (max-width: 480px) {
@@ -347,8 +325,7 @@
         padding: 5px;
       }
 
-      nav a,
-      nav>button {
+      nav a, nav > button {
         padding: 0 9px;
         font-size: 0.8rem;
         min-width: auto;
@@ -402,6 +379,9 @@
       align-items: center;
       padding-top: 80px;
       padding-bottom: 60px;
+      position: relative;
+      isolation: isolate;
+      z-index: 2;
     }
 
     .hero .wrap {
@@ -479,8 +459,7 @@
       padding: 16px 26px;
       border-radius: 999px;
       font-weight: 600;
-      background:
-        linear-gradient(var(--bg), var(--bg)) padding-box,
+      background: linear-gradient(var(--bg), var(--bg)) padding-box,
         linear-gradient(120deg, var(--accent), var(--hi)) border-box;
       border: 1.5px solid transparent;
       transition: transform 0.3s var(--pop);
@@ -535,8 +514,7 @@
       text-align: center;
       color: var(--mute);
       font-size: 0.9rem;
-      background: linear-gradient(150deg,
-          var(--surface),
+      background: linear-gradient(150deg, var(--surface),
           color-mix(in srgb, var(--accent) 28%, var(--surface)));
       border: 1px solid var(--line);
       box-shadow: 0 30px 60px -30px rgba(0, 0, 0, 0.5);
@@ -550,6 +528,8 @@
       height: 100%;
       object-fit: cover;
       z-index: 2;
+      font-size: 0;
+      color: transparent;
     }
 
     .pimg .fallback {
@@ -616,6 +596,11 @@
     /* ============================================================
    ABOUT
    ============================================================ */
+    .about {
+      position: relative;
+      z-index: 3;
+    }
+
     .about .wrap {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -631,16 +616,16 @@
       margin-top: 28px;
     }
 
-    .about p+p {
+    .about p + p {
       margin-top: 1.1em;
     }
 
-    .about .wrap>div>p:not(.pull) {
+    .about .wrap > div > p:not(.pull) {
       color: var(--mute);
     }
 
     .beyond {
-      grid-column: 1/-1;
+      grid-column: 1 / -1;
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
       gap: 16px;
@@ -791,9 +776,7 @@
     .rise {
       opacity: 0;
       transform: perspective(1000px) translateZ(-400px) rotateX(8deg) translateY(60px);
-      transition:
-        transform 1.1s var(--ease),
-        opacity 0.8s;
+      transition: transform 1.1s var(--ease), opacity 0.8s;
     }
 
     .rise.in {
@@ -803,15 +786,11 @@
 
     .pc.rise.in {
       transform: scale(var(--s, 1));
-      transition:
-        opacity 0.8s,
-        transform 0.3s linear;
+      transition: opacity 0.8s, transform 0.3s linear;
     }
 
     .flip.rise {
-      transition:
-        transform 0.9s var(--pop),
-        opacity 0.8s;
+      transition: transform 0.9s var(--pop), opacity 0.8s;
     }
 
     .flip.rise.in[aria-pressed="true"] {
@@ -833,7 +812,7 @@
     }
 
     .pface {
-      grid-area: 1/1;
+      grid-area: 1 / 1;
       backface-visibility: hidden;
       -webkit-backface-visibility: hidden;
       display: grid;
@@ -871,21 +850,10 @@
       position: relative;
     }
 
-    .t1 {
-      background: linear-gradient(135deg, #3b2f2a, #b9865a);
-    }
-
-    .t2 {
-      background: linear-gradient(135deg, #1f3a34, #6e9a86);
-    }
-
-    .t3 {
-      background: linear-gradient(135deg, #5a1f1a, #d08a3c);
-    }
-
-    .t4 {
-      background: linear-gradient(135deg, #1e2f4a, #5b86b8);
-    }
+    .t1 { background: linear-gradient(135deg, #3b2f2a, #b9865a); }
+    .t2 { background: linear-gradient(135deg, #1f3a34, #6e9a86); }
+    .t3 { background: linear-gradient(135deg, #5a1f1a, #d08a3c); }
+    .t4 { background: linear-gradient(135deg, #1e2f4a, #5b86b8); }
 
     .thumb img {
       position: absolute;
@@ -913,9 +881,7 @@
       font-size: 0.92rem;
       cursor: pointer;
       min-height: 44px;
-      transition:
-        border-color 0.3s,
-        background 0.3s;
+      transition: border-color 0.3s, background 0.3s;
     }
 
     .tog:hover {
@@ -1055,10 +1021,10 @@
       transform-origin: left;
     }
 
-    .fld input:focus+label,
-    .fld input:not(:placeholder-shown)+label,
-    .fld textarea:focus+label,
-    .fld textarea:not(:placeholder-shown)+label {
+    .fld input:focus + label,
+    .fld input:not(:placeholder-shown) + label,
+    .fld textarea:focus + label,
+    .fld textarea:not(:placeholder-shown) + label {
       transform: translateY(-10px) scale(0.75);
     }
 
@@ -1093,9 +1059,7 @@
       font: 600 1rem var(--sans);
       cursor: pointer;
       min-height: 48px;
-      transition:
-        background 0.4s,
-        color 0.4s;
+      transition: background 0.4s, color 0.4s;
     }
 
     .send:hover {
@@ -1116,9 +1080,7 @@
       padding: 22px 24px;
       border: 1px solid var(--line);
       border-radius: var(--r);
-      transition:
-        border-color 0.3s,
-        transform 0.3s var(--ease);
+      transition: border-color 0.3s, transform 0.3s var(--ease);
     }
 
     .soc a:hover {
@@ -1163,7 +1125,6 @@
    RESPONSIVE
    ============================================================ */
     @media (max-width: 960px) {
-
       .hero .wrap,
       .about .wrap,
       .contact .wrap {
@@ -1172,11 +1133,22 @@
 
       .hero {
         padding-top: 90px;
+        padding-bottom: 60px;
+        min-height: auto;
+        position: relative;
       }
 
       .obj {
-        margin-top: 16px;
+        margin-top: 24px;
         max-width: 300px;
+        margin-inline: auto;
+        justify-self: center;
+      }
+
+      .about {
+        border-radius: 0;
+        box-shadow: none;
+        margin-top: 0;
       }
 
       .pface {
@@ -1260,6 +1232,10 @@
         padding: 20px;
       }
 
+      .about {
+        padding-top: 80px;
+      }
+
       .flip {
         height: 340px;
       }
@@ -1293,12 +1269,16 @@
         margin-bottom: 24px;
       }
 
+      .contact {
+        padding-bottom: 180px;
+      }
+
       .soc a {
         padding: 18px 20px;
       }
 
       footer {
-        padding: 24px 0 130px;
+        padding: 24px 0 150px;
       }
 
       footer .wrap {
@@ -1343,7 +1323,6 @@
    REDUCED MOTION
    ============================================================ */
     @media (prefers-reduced-motion: reduce) {
-
       *,
       *::before,
       *::after {
@@ -1378,11 +1357,7 @@
    PRINT
    ============================================================ */
     @media print {
-
-      nav,
-      .cvb,
-      .bg3,
-      .top {
+      nav, .cvb, .bg3, .top {
         display: none;
       }
 
@@ -1455,8 +1430,8 @@
       <div class="obj" id="obj">
         <div class="photo" id="photo">
           <div class="pimg">
-            <!-- Replace src with your own photo. If it fails to load, the fallback below shows automatically. -->
-            <img src="/images/ookok.png" alt="Qamar Siam" onerror="this.remove()" />
+            <!-- Your photo. If it fails to load, the fallback below shows automatically. -->
+            <img src="images/ookok.png" alt="Qamar Siam" onerror="this.style.display='none'" />
             <div class="fallback" aria-hidden="true">
               <b>Q</b>
               <span>Your photo here</span>
@@ -1484,7 +1459,6 @@
             A theme is finished when a customer never has to think about it.
           </p>
         </div>
-<<<<<<< HEAD
         <div>
           <p>
             I graduated from the University of Agriculture, Faisalabad in 2025
@@ -1520,21 +1494,6 @@
               I design at 320px and scale up, because that's where most
               shoppers are.
             </p>
-=======
-
-        <div class="obj" id="obj">
-          <div class="photo" id="photo">
-            <div class="pimg">
-              <!-- Replace src with your own photo. If it fails to load, the fallback below shows automatically. -->
-              <img src="images/ookok.png" alt="Qamar Siam" onerror="this.remove()" />
-              <div class="fallback" aria-hidden="true">
-                <b>Q</b>
-                <span>Your photo here</span>
-              </div>
-              <i class="glare" aria-hidden="true"></i>
-            </div>
-            <span class="badge">MERN · Shopify</span>
->>>>>>> 6b7b6c19bf8ac259e918b26e5c7af92e934a8e72
           </div>
         </div>
       </div>
@@ -1579,8 +1538,8 @@
           </form>
         </div>
         <div class="soc">
-          <a href="https://github.com/qamarsiam">GitHub <small>Check My Work</small></a>
-          <a href="https://linkedin.com/in/qamar-siam-">LinkedIn <small>My LinkedIn Profile</small></a>
+          <a href="https://github.com/qamarsiam" target="_blank" rel="noopener">GitHub <small>Check My Work</small></a>
+          <a href="https://linkedin.com/in/qamar-siam-" target="_blank" rel="noopener">LinkedIn <small>My LinkedIn Profile</small></a>
           <a href="mailto:qamarsiam7376@gmail.com">Email <small>Send me a message</small></a>
         </div>
       </div>
@@ -1756,7 +1715,6 @@
             d: "A MERN e-commerce build for a spice shop.",
             s: ["Hero Section", "Collection Grid", "Story"],
             pts: [
-
               "Mirchi: MERN storefront",
             ],
             tag: "MERN",
@@ -1974,9 +1932,7 @@
         onScroll();
 
         /* ============================================================
-   HERO PHOTO TILT — no media-query guard, listens for pointer
-   events and ignores touch. Drives CSS variables on .photo
-   and .glare so the transform lives in CSS.
+   HERO PHOTO TILT
    ============================================================ */
         const ph = $("#photo");
         const gl = $(".glare", ph);
@@ -1984,10 +1940,7 @@
         const hero = $(".hero");
 
         if (ph && gl && obj && hero && !rm) {
-          let tx = 0,
-            ty = 0,
-            cx = 0,
-            cy = 0;
+          let tx = 0, ty = 0, cx = 0, cy = 0;
           let dirty = false;
           let rect = obj.getBoundingClientRect();
           let visible = true;
